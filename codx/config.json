@@ -1,0 +1,157 @@
+{
+  "version": 3,
+  "warp": {
+    "cli_path": "C:\\Program Files\\Cloudflare\\Cloudflare WARP\\warp-cli.exe",
+    "mode": "proxy",
+    "tunnel_protocol": "MASQUE",
+    "enforce_mode": true,
+    "proxy_host": "127.0.0.1",
+    "proxy_port": 40000,
+    "connect_timeout_s": 30,
+    "rotate_keys": true,
+    "reset_endpoint": true,
+    "allow_reregister": true,
+    "max_address_attempts": 4,
+    "settle_s": 12,
+    "keep_gui_closed": true,
+    "gui_process": "Cloudflare WARP.exe",
+    "restore_mode": "warp",
+    "restore_tunnel_protocol": "MASQUE",
+    "restore_connect": true
+  },
+  "tor": {
+    "exe_path": "C:\\Users\\A\\AppData\\Local\\codx\\tor\\tor.exe",
+    "search_globs": [
+      "C:\\Program Files\\Tor Browser\\Browser\\TorBrowser\\Tor\\tor.exe",
+      "C:\\Program Files (x86)\\Tor Browser\\Browser\\TorBrowser\\Tor\\tor.exe",
+      "%LOCALAPPDATA%\\Tor Browser\\Browser\\TorBrowser\\Tor\\tor.exe",
+      "%LOCALAPPDATA%\\codx\\tor\\tor.exe",
+      "%LOCALAPPDATA%\\codx\\tor\\Tor\\tor.exe"
+    ],
+    "socks_host": "127.0.0.1",
+    "socks_port": 19050,
+    "control_host": "127.0.0.1",
+    "control_port": 19051,
+    "auto_port": true,
+    "control_password": "",
+    "bootstrap_timeout_s": 90,
+    "newnym_wait_s": 12,
+    "data_dir": "%LOCALAPPDATA%\\codx\\tor-data",
+    "extra_args": []
+  },
+  "bridge": {
+    "listen_host": "127.0.0.1",
+    "listen_port": 8899,
+    "connect_timeout_s": 20,
+    "idle_timeout_s": 180,
+    "max_connections": 256,
+    "max_header_bytes": 65536
+  },
+  "rotation": {
+    "min_interval_s": 10,
+    "cooldown_minutes": 125,
+    "auto_rotate": true,
+    "background_protection": true,
+    "warp_pool_attempts": 4,
+    "exhaustion_repeats": 3
+  },
+  "probe": {
+    "url": "https://api.ipify.org?format=json",
+    "method": "GET",
+    "match_strings": [
+      "free usage limit",
+      "rate limit",
+      "rate_limit",
+      "too many requests",
+      "limit reached",
+      "quota exceeded",
+      "usage limit"
+    ],
+    "timeout_s": 12,
+    "interval_s": 30,
+    "max_body_bytes": 65536
+  },
+  "resume": {
+    "enabled": true,
+    "auto_after_rotation": true,
+    "drafts_db": [
+      "%APPDATA%\\ai.opencode.desktop\\drafts.sqlite",
+      "%USERPROFILE%\\.config\\ai.opencode.desktop\\drafts.sqlite",
+      "%USERPROFILE%\\.local\\share\\opencode\\drafts.sqlite"
+    ],
+    "session_db": [
+      "%USERPROFILE%\\.local\\share\\opencode\\opencode.db",
+      "%LOCALAPPDATA%\\opencode\\opencode.db"
+    ],
+    "lock_keys": [
+      "free-limit",
+      "go-upsell"
+    ],
+    "lock_like": [
+      "%free%limit%",
+      "%quota%exceeded%",
+      "%upsell%"
+    ],
+    "recent_minutes": 120,
+    "max_sessions": 3,
+    "continue_text": "continue",
+    "cli_path": "",
+    "cli_search": [
+      "%LOCALAPPDATA%\\Programs\\ai.opencode.desktop\\resources\\opencode-cli.exe",
+      "%LOCALAPPDATA%\\Programs\\*\\resources\\opencode-cli.exe",
+      "%LOCALAPPDATA%\\Programs\\*\\opencode-cli.exe"
+    ],
+    "auto_approve": true,
+    "cli_args": [],
+    "send_timeout_s": 75,
+    "verify_timeout_s": 90,
+    "verify_poll_s": 3,
+    "db_timeout_s": 5
+  },
+  "leak": {
+    "enabled": true,
+    "interval_s": 60,
+    "urls": [
+      "https://opencode.ai/cdn-cgi/trace",
+      "https://cloudflare.com/cdn-cgi/trace",
+      "https://1.1.1.1/cdn-cgi/trace"
+    ],
+    "timeout_s": 8,
+    "expect_warp": [
+      "on",
+      "plus"
+    ]
+  },
+  "ip": {
+    "v4_url": "https://api.ipify.org?format=json",
+    "v6_url": "https://api64.ipify.org?format=json",
+    "timeout_s": 12,
+    "history_limit": 200
+  },
+  "health": {
+    "interval_s": 20,
+    "warp_interval_s": 8,
+    "failures_before_switch": 2
+  },
+  "target": {
+    "name": "OpenCode",
+    "app_path": "C:\\Users\\A\\AppData\\Local\\Programs\\ai.opencode.desktop\\OpenCode.exe",
+    "app_args": [],
+    "cli_path": "C:\\Users\\A\\AppData\\Local\\opencode-unlimited\\bin\\opencode.cmd",
+    "cli_args": [],
+    "proxy_env_var": "HTTPS_PROXY",
+    "proxy_env_var_alt": "HTTP_PROXY"
+  },
+  "ui": {
+    "start_minimized": false,
+    "close_to_tray": true,
+    "refresh_ms": 1000
+  },
+  "logging": {
+    "file": "%LOCALAPPDATA%\\codx\\codx.log",
+    "max_bytes": 2097152,
+    "backup_count": 3,
+    "ring_size": 2000
+  },
+  "state_file": "%LOCALAPPDATA%\\codx\\state.json"
+}
